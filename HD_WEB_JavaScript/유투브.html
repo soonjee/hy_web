@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+    <div id="stop">stop</div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    // controls: 0,
+                    // showinfo: 0,
+                    // autohide: 1,
+                    // playsinline: 1,
+                    mute: 1,
+                },
+                videoId: 'raw3Nu0_mBQ',
+                events: {
+                    //'onReady': onPlayerReady,
+                    //'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        var done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+
+        document.getElementById('stop').addEventListener('click', stopVideo)
+    </script>
+</body>
+
+</html>
