@@ -1,0 +1,478 @@
+:root {
+    --mc: #008850;
+    --sc: #00e085;
+    --lc: #f9f9f9;
+    --dc: #444444;
+    --gc: #dddddd;
+}
+
+/* all */
+
+body {
+    color: #444444;
+    letter-spacing: -0.02em;
+}
+
+.inner {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.inner>* {
+    flex: 1;
+}
+
+.w1200 {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.sc {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.sc h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.sc .tit {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 40px 0;
+}
+
+
+.Wrap {}
+
+.TopBanner {
+    background: var(--mc);
+    color: var(--lc);
+    height: 155px;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+.TopBanner .w1200 {
+    position: relative;
+    padding: 50px 0;
+}
+
+.TopBanner.on {
+    height: 0;
+}
+
+.TopBanner h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.TopBanner span {
+    color: var(--sc);
+    font-weight: 400;
+}
+
+.TopBanner p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.TopBanner .top_close_btn {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    font-size: 30px;
+}
+
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.Header .hd_wrap {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--lc);
+    line-height: 100px;
+    transition: 0.5s;
+}
+
+.Header.on .hd_wrap {
+    background: var(--lc);
+    color: var(--dc);
+    line-height: 80px;
+}
+
+
+.Header .hd_wrap:hover {
+    background: var(--lc);
+    color: var(--dc);
+}
+
+.Header h1 {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    font-size: 0;
+}
+
+.Header .hd_wrap h1 a {
+    display: inline-block;
+    font-size: 0;
+    width: 188px;
+    height: 22px;
+    background: url(../assets/logo_w.png);
+    vertical-align: middle;
+}
+
+.Header .hd_wrap:hover h1 a {
+    background: url(../assets/logo.png);
+}
+
+.Header.on .hd_wrap h1 a {
+    background: url(../assets/logo.png);
+}
+
+.Header .top_service {
+    position: absolute;
+    top: 0;
+    right: 70px;
+}
+
+.Gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+.Header .top_service {
+    display: flex;
+    gap: 40px;
+}
+
+.Header .top_service .project li {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.Header .top_service .project li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: var(--gc);
+    margin: 0 10px;
+}
+
+.Header .top_service strong {
+    cursor: pointer;
+}
+
+.Header .top_service strong:hover {
+    color: #008850;
+}
+
+.Header .top_service strong.on {
+    color: #008850;
+}
+
+.Header .top_service .lang {
+    position: relative;
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+.Header .top_service .lang .arrow {
+    font-size: 7px;
+    vertical-align: 0.3em;
+}
+
+.Header .top_service .lang.on .arrow {
+    transform: rotate(180deg);
+}
+
+.Header .top_service .lang .lang_box {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1.45;
+    border: 2px solid var(--mc);
+    background: var(--lc);
+    color: #444444;
+    padding: 20px 35px;
+}
+
+.Header .top_service .lang.on .lang_box {
+    display: block;
+}
+
+.Header .top_service .top_search {
+    position: relative;
+}
+
+.Header .top_search .search_box {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: -65px;
+    line-height: 1;
+    border: 1px solid var(--gc);
+    background: var(--lc);
+    padding: 30px 50px;
+    width: 600px;
+    text-align: center;
+}
+
+.Header .top_search.on .search_box {
+    display: block;
+}
+
+.Header .top_search .search_box input[type="text"] {
+    font-size: 20px;
+    width: 450px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--dc);
+}
+
+.Header .top_search .search_box button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+}
+
+.Header .top_search .search_box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 60px;
+    width: 20px;
+    height: 20px;
+    background: var(--lc);
+    border-left: 1px solid var(--gc);
+    border-top: 1px solid var(--gc);
+    transform: rotate(45deg);
+}
+
+.main_slider figure {
+    position: relative;
+    height: 900px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.main_slider figure .w1200 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 3px var(--dc);
+    color: var(--lc);
+}
+
+.main_slider .itm01 {
+    background-image: url(../assets/main_visual01.jpg);
+}
+
+.main_slider .itm02 {
+    background-image: url(../assets/main_visual02.jpg);
+}
+
+.main_slider .itm03 {
+    background-image: url(../assets/main_visual03.jpg);
+}
+
+.main_slider figure h2 {
+    font-size: 50px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on h2 {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.main_slider figure span {
+    display: block;
+    margin: 10px 0;
+}
+
+.main_slider figure p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.45;
+    margin: 0 0 50px 0;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on p {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+.main_slider figure a {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid var(--lc);
+    color: var(--lc);
+    font-size: 13px;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.main_slider figure.on a {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+.MainVisual {
+    position: relative;
+    padding: 155px 0 0 0;
+    transition: 0.5s;
+}
+
+.MainVisual.on {
+    padding: 0 0 0 0;
+}
+
+.MainVisual .main_slider_num {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    margin: 0 0 0 -600px;
+    color: var(--lc);
+    font-size: 35px;
+    z-index: 999;
+}
+
+.MainVisual .main_slider_num span {
+    font-size: 18px;
+    color: var(--gc);
+}
+
+
+.MainVisual .slide_handler button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0;
+    z-index: 999;
+}
+
+.MainVisual .slide_handler button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid #f9f9f9;
+
+}
+
+.MainVisual .slide_handler button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    height: 0;
+    border-top: 1px solid #f9f9f9;
+}
+
+.MainVisual .slide_handler button:first-child::after {
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: left top;
+}
+
+.MainVisual .slide_handler button:last-child::after {
+    right: 0;
+    transform: rotate(45deg);
+    transform-origin: right top;
+}
+
+.MainVisual .slide_handler button:first-child {
+    margin: 0 0 0 -800px;
+}
+
+.MainVisual .slide_handler button:last-child {
+    margin: 0 0 0 800px;
+}
+
+.MainVisual .num {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    margin: 0 0 0 -600px;
+    color: #fff;
+    font-size: 35px;
+}
+
+.MainVisual .num span {
+    font-size: 20px;
+    color: #ddd;
+}
+
+.MainVisual .slide_dots {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 600px;
+    transform: translate(-100%, -50%);
+    color: #f9f9f9;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: right;
+    z-index: 999;
+}
+
+.MainVisual .slide_dots li {
+    margin: 0 0 10px 0;
+    cursor: pointer;
+}
+
+.MainVisual .slide_dots li span {
+    font-size: 0;
+}
+
+.MainVisual .slide_dots li.on span {
+    font-size: 18px;
+}
+
+.MainVisual .slide_dots li::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0 0 0 15px;
+    vertical-align: -0.2em;
+}
