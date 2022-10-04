@@ -8,6 +8,12 @@
 
 /* all */
 
+/* 슬라이드 깜박임 없애기 */
+.main_slider .swiper-wrapper,
+.main_slider .swiper-slide {
+    transition-duration: 0.5ms;
+}
+
 body {
     color: #444444;
     letter-spacing: -0.02em;
@@ -43,6 +49,14 @@ body {
     font-size: 15px;
     font-weight: 300;
     margin: 0 0 40px 0;
+}
+
+.sc a.btn_s01 {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #008850;
+    color: #008850;
+    font-size: 13px;
 }
 
 
@@ -394,7 +408,6 @@ body {
     width: 20px;
     height: 20px;
     border-top: 1px solid #f9f9f9;
-
 }
 
 .MainVisual .slide_handler button::before {
@@ -475,4 +488,328 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.5);
     margin: 0 0 0 15px;
     vertical-align: -0.2em;
+}
+
+.MainContent .inner .thumb {
+    overflow: hidden;
+    margin: 0 0 40px 0;
+}
+
+.MainContent .inner figure img {
+    transition: 0.4s;
+}
+
+.MainContent .inner figure:hover img {
+    transform: scale(1.2);
+}
+
+.MainContent .inner .des {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.MainContent .inner .des::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background: #008850;
+}
+
+.MainContent .inner p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.45;
+    margin: 0 0 20px 0;
+}
+
+.Portfolio {
+    text-align: left;
+    background: url(../assets/section1_bg.jpg) repeat-x;
+}
+
+.Portfolio .wrap_port {
+    display: flex;
+
+    width: calc((100% - 1200px) / 2 + 1200px);
+    margin: 0 0 0 auto;
+    overflow: hidden;
+}
+
+.Portfolio .wrap_port .left {
+    width: 450px;
+}
+
+.Portfolio .wrap_port .right {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 450px);
+    padding: 50px 0 0 0;
+}
+
+.portfolio_right_slide {
+    margin: auto 0 0 0;
+}
+
+.Portfolio .wrap_port .right .title {
+    color: var(--lc);
+}
+
+.Portfolio .slide_handler {
+    display: inline-block;
+    border: 1px solid #f9f9f9;
+    font-size: 0;
+}
+
+.Portfolio .slide_handler i {
+    font-size: 20px;
+    color: #f9f9f9;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.Portfolio .slide_handler i~i {
+    border-left: 1px solid #f9f9f9;
+}
+
+.Portfolio .wrap_port strong {
+    display: block;
+    /* background: var(--lc); */
+    line-height: 50px;
+}
+
+/* .Portfolio .portfolio_left_slide {
+    overflow: visible;
+} */
+
+.Portfolio .portfolio_left_slide img {
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Solution {
+    background: var(--lc);
+}
+
+.Solution .container {
+    position: relative;
+}
+
+.Solution .center_slider img {
+
+    margin: 0 auto;
+}
+
+.Solution .center_slider figure {
+    width: 1200px !important;
+    filter: brightness(2) grayscale(1);
+}
+
+.Solution .center_slider figure.on {
+    filter: brightness(1) grayscale(0);
+    transition: 1s;
+}
+
+.Solution .content_box>div {
+    display: none;
+}
+
+.Solution .content_box>div.on {
+    display: block;
+}
+
+.Solution .case {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    background: #fff;
+    padding: 50px;
+    margin: 0 0 0 -530px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.Solution .case::after {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: -20px;
+    width: 40px;
+    height: 2px;
+    background: #008850;
+}
+
+.Solution .content_box {
+    margin: 0 0 10px 0;
+}
+
+.Solution .content_box strong {
+    display: block;
+    margin: 0 0 15px 0;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.Solution .content_box p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.45;
+    min-height: 150px;
+}
+
+.Solution .case .solution_slider_num {
+    font-size: 40px;
+    color: #008850;
+}
+
+.Solution .case .solution_slider_num span {
+    font-size: 16px;
+    color: #555;
+}
+
+.Solution .slide_handler {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1300px;
+    z-index: 999;
+}
+
+.Solution .slide_handler i {
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.Solution .slide_handler i:first-child { float: left; }
+.Solution .slide_handler i:last-child { float: right; }
+
+.Solution .Solution_dots {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0;
+    margin: 30px 0 0 0;
+}
+
+.Solution .Solution_dots>li {
+    width: 20px;
+    height: 20px;
+    background: var(--gc);
+}
+
+.Solution .Solution_dots>li:active-dots {
+    background: var(--mc);
+}
+
+.Solution .slick-dots {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Solution .slick-dots li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #dddddd;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.Solution .slick-dots li.slick-active { background: #008850; }
+.Solution .slick-dots li button { display: none; }
+
+.Promotion {
+    padding: 100px 0;
+    background: url(../assets/section4_bg.jpg) no-repeat left bottom;
+    text-align: center;
+}
+
+.Promotion h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.Promotion>p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 40px 0;
+}
+
+.Promotion .container {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.Promotion .movie_case {
+    width: 800px;
+    height: 450px;
+    margin: 0 auto 80px auto;
+    overflow: hidden;
+}
+
+
+.Promotion .txt {
+    display: flex;
+    width: 800px;
+}
+
+.Promotion .txt li {
+    flex: 1;
+}
+
+.Promotion .txt strong {
+    display: block;
+    font-size: 22px;
+    color: #00e085;
+    margin: 0 0 15px 0;
+}
+
+.Promotion .txt span {
+    display: block;
+    font-size: 15px;
+    color: #f9f9f9;
+}
+
+.Promotion .movie_handler {
+    position: absolute;
+    top: 225px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Promotion .movie_handler button {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0;
+}
+
+.Promotion .movie_handler button::after {
+    content: "\ea3b";
+    font-size: 50px;
+    font-family: xeicon;
+    color: #fff;
+    background: #008850;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.Promotion .movie_handler button.on::after {
+    content: "\ea3e";
 }
