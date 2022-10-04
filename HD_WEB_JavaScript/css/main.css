@@ -7,6 +7,9 @@
 }
 
 /* all */
+.mainColor {
+    color: var(--mc);
+}
 
 /* 슬라이드 깜박임 없애기 */
 .main_slider .swiper-wrapper,
@@ -112,7 +115,9 @@ body {
 
 .Header .hd_wrap {
     position: relative;
-    background: rgba(0, 0, 0, 0.5);
+    /* max-width: 1920px; */
+    margin: 0 auto;
+    background: rgba(0,0,0,0.15);
     color: var(--lc);
     line-height: 100px;
     transition: 0.5s;
@@ -163,6 +168,7 @@ body {
 .Gnb>ul {
     display: flex;
     gap: 40px;
+    font-size: 18px;
 }
 
 .Header .top_service {
@@ -173,7 +179,7 @@ body {
 .Header .top_service .project li {
     display: inline-block;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .Header .top_service .project li~li::before {
@@ -240,7 +246,7 @@ body {
     right: -65px;
     line-height: 1;
     border: 1px solid var(--gc);
-    background: var(--lc);
+    background: #fff;
     padding: 30px 50px;
     width: 600px;
     text-align: center;
@@ -278,6 +284,8 @@ body {
     transform: rotate(45deg);
 }
 
+
+/* main_slider */
 .main_slider figure {
     position: relative;
     height: 900px;
@@ -408,6 +416,7 @@ body {
     width: 20px;
     height: 20px;
     border-top: 1px solid #f9f9f9;
+
 }
 
 .MainVisual .slide_handler button::before {
@@ -550,9 +559,11 @@ body {
     flex-direction: column;
     width: calc(100% - 450px);
     padding: 50px 0 0 0;
+    overflow: hidden;
 }
 
 .portfolio_right_slide {
+    width: calc(100% + 50px);
     margin: auto 0 0 0;
 }
 
@@ -711,7 +722,7 @@ body {
     justify-content: center;
     gap: 20px;
     font-size: 0;
-    margin: 30px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
 .Solution .Solution_dots>li {
@@ -720,7 +731,7 @@ body {
     background: var(--gc);
 }
 
-.Solution .Solution_dots>li:active-dots {
+.Solution .Solution_dots>li.on {
     background: var(--mc);
 }
 
@@ -728,29 +739,7 @@ body {
 
 
 
-.Solution .slick-dots {
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-.Solution .slick-dots li {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: #dddddd;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-.Solution .slick-dots li.slick-active {
-    background: #008850;
-}
-
-.Solution .slick-dots li button {
-    display: none;
-}
 
 .Promotion {
     padding: 100px 0;
@@ -821,7 +810,7 @@ body {
 }
 
 .Promotion .movie_handler button::after {
-    content: "\ea3b";
+    content: "\ea3e";
     font-size: 50px;
     font-family: xeicon;
     color: #fff;
@@ -831,5 +820,228 @@ body {
 }
 
 .Promotion .movie_handler button.on::after {
-    content: "\ea3e";
+    content: "\ea3b";
+}
+
+.news .inner {
+    gap: 30px;
+}
+
+
+.news figure {
+    text-align: left;
+}
+
+.news figure img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 0 20px 0;
+}
+
+.news figure .sort {
+    display: block;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: #008850;
+}
+
+.news figure .title {
+    margin: 0 0 20px 0;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.news figure:hover .title {
+    text-decoration: underline;
+}
+
+.news figure .date {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+
+.Footer {
+    position: relative;
+    border-top: 1px solid #ddd;
+    line-height: 80px;
+}
+
+.Footer .ft_top {
+    border-bottom: 1px solid #ddd;
+}
+
+.Footer ul>li {
+    display: inline-block;
+}
+
+.Footer .ft_top .right {
+    margin: 0 0 0 auto;
+    text-align: right;
+}
+
+.Footer .ft_top .left li~li::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    background: #008850;
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+.Footer .ft_top .left span {
+    font-size: 20px;
+}
+
+.Footer .ft_top .right li a {
+    position: relative;
+    display: block;
+    padding: 0 30px 0 20px;
+}
+
+.Footer .ft_top .right li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 2px;
+    background: #008850;
+}
+
+.Footer .ft_top .right li a::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 4px;
+    width: 2px;
+    height: 10px;
+    background: #008850;
+}
+
+.Footer .ft_top .right li.on a::after {
+    display: none;
+}
+
+.Footer .ft_bottom {
+    line-height: 1;
+    padding: 30px 0;
+}
+
+.Footer .ft_bottom .inner>* {
+    flex: none;
+}
+
+.Footer .ft_bottom .family_link {
+    padding: 5px 0 0 0;
+    order: 2;
+}
+
+.Footer .ft_bottom .family_link select {
+    background: #444444;
+    color: #f9f9f9;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0 15px;
+}
+
+.Footer .ft_bottom .left {
+    font-size: 15px;
+}
+
+.Footer .ft_bottom .left address {
+    margin: 0 0 5px 0;
+}
+
+.Footer .ft_bottom .right {
+    margin: 0 0 0 auto;
+}
+
+.Footer .ft_bottom .right i {
+    font-size: 20px;
+    color: #f9f9f9;
+    background: #444444;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0 10px 0 0;
+}
+
+.Footer .ft_top .content {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.Footer .ft_top .content>ul {
+    display: none;
+    width: 1200px;
+    height: 80px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 0 0 0 50px;
+}
+
+.Footer .ft_top .content>ul>li {
+    margin: 0 30px 0 0;
+}
+
+.Footer .ft_top .content>ul.on {
+    display: block;
+}
+
+
+.to_top {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    font-size: 30px;
+    background: var(--mc);
+    color: var(--lc);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 1s;
+}
+
+.to_top.on {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+}
+
+.popup .pop_case {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup .pop_close {
+    background: #fff;
+    padding: 5px 10px;
+}
+
+.popup .pop_close button {
+    float: right;
+    border: none;
+    background: #008850;
+    color: #fff;
 }
