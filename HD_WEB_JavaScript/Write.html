@@ -71,18 +71,193 @@
                         <p>엘리베이터 / 에스컬레이터 / 무빙워크</p>
                     </div>
                     <div class="Page_wrap">
+                        <!-- 필수항목 테이블 -->
                         <div class="table_wrap">
                             <div class="TopTit tt">필수항목</div>
-                            <table>
-                                <tbody>
+                            <!-- 캡션태그로 할껄 그랬나? -->
+                            <div class="table_bd">
+                                <table>
+                                    <tbody>
+                                        <!-- 작성자 정보 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">작성자 정보</p>
+                                            </th>
+                                            <td>
+                                                <div class="colum_2">
+                                                    <div class="user_name">
+                                                        <input type="text" class="input_type1" id="us_name" ,
+                                                            placeholder="이름 입력(20자 이내)">
+                                                        <p class="alert_msg">이름을 입력해주세요.</p>
+                                                    </div>
+                                                    <div class="user_num">
+                                                        <select name="number" id="num_group" class="phone_input">
+                                                            <option value="">010</option>
+                                                            <option value="02">02</option>
+                                                            <option value="051">051</option>
+                                                            <option value="070">070</option>
+                                                            <option value="019">019</option>
+                                                        </select>
+                                                        <input type="tel" class="input_type1 phone_num" id="us_num"
+                                                            ,placeholder="연락처 -없이 입력" />
+                                                        <p class="alert_msg">-없이 연락처를 입력해주세요.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="clear">
+                                                    <div class="colum email">
+                                                        <input type="text" id="email01" class="emailbox" name="email01"
+                                                            placeholder="이메일 입력">
+                                                        <span>@</span>
+                                                        <input type="text" id="email02" class="emailbox" name="email02"
+                                                            placeholder="직접입력">
+                                                    </div>
+                                                    <div class="colum colmail">
+                                                        <select name="email" id="email_group" class="select_type1 ">
+                                                            <option value="">직접입력</option>
+                                                            <option value="naver">naver.com</option>
+                                                            <option value="nate">nate.com</option>
+                                                            <option value="daum">daum.net</option>
+                                                            <option value="hanmail">hanmail.com</option>
+                                                        </select>
+                                                        <p class="alert_msg">이메일을 입력해주세요.</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- 문의유형 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">문의유형</p>
+                                            </th>
+                                            <td>
+                                                <div class="radio_group">
+                                                    <span class="radio_tit">신규설치</span>
+                                                    <span class="radio_box">
+                                                        <input type="radio" id="Estimate">
+                                                        <label for="Estimate">견적 문의</label>
+                                                    </span>
+                                                    <span class="radio_box">
+                                                        <input type="radio" id="floorplan">
+                                                        <label for="floorplan">도면 문의</label>
+                                                    </span>
+                                                </div>
+                                                <p class="table_cmt">※ 교체공사, 설치/서비스 불만, 고장접수 24시간 고객케어센터 : 1577-0603</p>
+                                            </td>
+                                        </tr>
+                                        <!-- 건물정보 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">건물정보</p>
+                                            </th>
+                                            <td>
+                                                <div class="build_group">
+                                                    <div class="colum_3">
+                                                        <input type="number" class="input_type1" id="build1"
+                                                            placeholder="지하 층 입력">
+                                                        <input type="number" class="input_type1" id="build2"
+                                                            placeholder="지상 층 입력">
+                                                        <input type="number" class="input_type1" id="build3"
+                                                            placeholder="연면적(m&sup2;) 입력">
+                                                    </div>
+                                                    <div class="build_btm">
+                                                        <select name="Area" class="select_type1" id="Area_group">
+                                                            <option value="">지역선택</option>
+                                                            <option value="02">서울지역</option>
+                                                            <option value="051">경기지역</option>
+                                                            <option value="070">인천지역</option>
+                                                            <option value="019">부산지역</option>
+                                                        </select>
+                                                        <input type="text" class="input_type1" id="build_name"
+                                                            placeholder="건물명 입력(30자 이내)">
+                                                    </div>
+                                                    <div class="build_address">
+                                                        <input type="text" class="input_type1" id="sample6_postcode"
+                                                            placeholder="우편번호">
+                                                        <input type="button" onclick="sample6_execDaumPostcode()"
+                                                            value="우편번호 찾기"><br>
+                                                        <input type="text" class="input_type1" id="sample6_address"
+                                                            placeholder="건물 주소 입력"><br>
+                                                        <input type="text" class="input_type1"
+                                                            id="sample6_detailAddress" placeholder="나머지 상세 주소 입력">
+                                                        <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                                </tbody>
-                            </table>
+                                        <!-- 문의내용 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">문의내용</p>
+                                            </th>
+                                            <td>
+                                                <div class="board_group">
+                                                    <input type="text" class="input_type1 board01" id="boardTit" ,
+                                                        placeholder="제목 입력(100자이내)" />
+                                                    <input type="text" class="input_type1 board02" id="boardCnt" ,
+                                                        placeholder="문의 내용 입력( 내용은 20자 이상 입력해주세요.)" />
+                                                    <p class="table_cmt">한글 1500자, 영문 3000자 까지 입력 가능합니다.</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- 파일첨부 업로드 박스 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">파일첨부</p>
+                                            </th>
+                                            <td>
+                                                <!-- upload box의 경우 input 타입은 file을 사용 -->
+                                                <!-- accept: 서버가 수용할 수 있는 파일 타입 -->
+                                                <div class="upload_box">
+                                                    <span class="upload_group">
+                                                        <!-- <input class="upload-name" value="파일선택"> -->
+                                                        <label for="ex_file">파일추가</label>
+                                                        <input type="file" id="ex_file" accept="image/*">
+                                                    </span>
+                                                    <span class="upload_group">
+                                                        <label for="ex_file">항목제거</label>
+                                                    </span>
+                                                </div>
+                                                <p class="table_cmt">
+                                                    이미지 가능 확장자: jpg, gif, bmp <br />
+                                                    파일 가능 확장자 : txt, hwp, xls, ppt, doc, zip, pdf <br />
+                                                    첨부파일은 한 개 등록 가능하며 사이즈를 1M로 제한합니다.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
+                        <!-- 약관동의 테이블 -->
                         <div class="agreement">
                             <div class="table_wrap">
                                 <div class="TopTit tt">약관동의</div>
+                                <!-- 캡션태그로 할껄 그랬나? -->
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <div class="icon_tit">
+                                                <input type="checkbox" id="agree">
+                                                <label for="agree">개인정보 수집 및 이용에 관한 동의</label>
+                                            </div>
+                                        </tr>
+                                        <td>
+                                            <input type="text">
+                                            <!-- 인풋 안 약관내용 작성하기 -->
+                                            <p class="alert_msg">개인정보 수집 및 이용안내에 동의하셔야 신청이 가능합니다.</p>
+                                        </td>
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
+                        <!-- 완료버튼 -->
+                        <div class="btn">
+                            <ul>
+                                <li class="btn_ac01"><a href="">문의완료</a></li>
+                                <li class="btn_ac02"><a href="">취소</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -90,7 +265,10 @@
         </section>
     </div>
 
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="./js/DaumPostcode.js"></script>
     <script src="./js/Write.js"></script>
+
 </body>
 
 </html>
