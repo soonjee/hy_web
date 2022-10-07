@@ -73,7 +73,7 @@
                     <div class="Page_wrap">
                         <!-- 필수항목 테이블 -->
                         <div class="table_wrap">
-                            <div class="TopTit tt">필수항목</div>
+                            <div class="Essn tt">필수항목</div>
                             <!-- 캡션태그로 할껄 그랬나? -->
                             <div class="table_bd">
                                 <table>
@@ -84,14 +84,14 @@
                                                 <p class="icon_tit">작성자 정보</p>
                                             </th>
                                             <td>
-                                                <div class="colum_2">
+                                                <div class="colum_2 mb10">
                                                     <div class="user_name">
-                                                        <input type="text" class="input_type1" id="us_name" ,
+                                                        <input type="text" class="input_type1 name" id="us_name" ,
                                                             placeholder="이름 입력(20자 이내)">
                                                         <p class="alert_msg">이름을 입력해주세요.</p>
                                                     </div>
                                                     <div class="user_num">
-                                                        <select name="number" id="num_group" class="phone_input">
+                                                        <select name="num_group" id="num_group" class="phone_input">
                                                             <option value="">010</option>
                                                             <option value="02">02</option>
                                                             <option value="051">051</option>
@@ -99,7 +99,7 @@
                                                             <option value="019">019</option>
                                                         </select>
                                                         <input type="tel" class="input_type1 phone_num" id="us_num"
-                                                            ,placeholder="연락처 -없이 입력" />
+                                                            placeholder="연락처 -없이 입력" />
                                                         <p class="alert_msg">-없이 연락처를 입력해주세요.</p>
                                                     </div>
                                                 </div>
@@ -151,7 +151,8 @@
                                             </th>
                                             <td>
                                                 <div class="build_group">
-                                                    <div class="colum_3">
+                                                    <!-- build01 - 층수 상세선택 서비스 -->
+                                                    <div class="colum_3 mb10">
                                                         <input type="number" class="input_type1" id="build1"
                                                             placeholder="지하 층 입력">
                                                         <input type="number" class="input_type1" id="build2"
@@ -159,8 +160,10 @@
                                                         <input type="number" class="input_type1" id="build3"
                                                             placeholder="연면적(m&sup2;) 입력">
                                                     </div>
-                                                    <div class="build_btm">
-                                                        <select name="Area" class="select_type1" id="Area_group">
+                                                    <!-- build02 - 지역선택 서비스 -->
+                                                    <div class="build_btm mb10">
+                                                        <select name="Area" class="select_type1 AreaSel"
+                                                            id="Area_group">
                                                             <option value="">지역선택</option>
                                                             <option value="02">서울지역</option>
                                                             <option value="051">경기지역</option>
@@ -170,15 +173,22 @@
                                                         <input type="text" class="input_type1" id="build_name"
                                                             placeholder="건물명 입력(30자 이내)">
                                                     </div>
+                                                    <!-- build03 - 주소찾기 서비스 -->
                                                     <div class="build_address">
-                                                        <input type="text" class="input_type1" id="sample6_postcode"
-                                                            placeholder="우편번호">
-                                                        <input type="button" onclick="sample6_execDaumPostcode()"
-                                                            value="우편번호 찾기"><br>
-                                                        <input type="text" class="input_type1" id="sample6_address"
-                                                            placeholder="건물 주소 입력"><br>
-                                                        <input type="text" class="input_type1"
-                                                            id="sample6_detailAddress" placeholder="나머지 상세 주소 입력">
+                                                        <div class="add2 mb10">
+                                                            <input type="text" class="input_type1 post_num no_touch"
+                                                                id="sample6_postcode" placeholder="우편번호" disabled>
+                                                            <input type="button" class="btn_type"
+                                                                onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+                                                        </div>
+                                                        <div class="mb10">
+                                                            <input type="text" class="input_type1 no_touch"
+                                                                id="sample6_address" placeholder="건물 주소 입력" disabled>
+                                                        </div>
+                                                        <div>
+                                                            <input type="text" class="input_type1"
+                                                                id="sample6_detailAddress" placeholder="나머지 상세 주소 입력">
+                                                        </div>
                                                         <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
                                                     </div>
                                                 </div>
@@ -192,11 +202,11 @@
                                             </th>
                                             <td>
                                                 <div class="board_group">
-                                                    <input type="text" class="input_type1 board01" id="boardTit" ,
+                                                    <input type="text" class="input_type1 mb10" id="boardTit" ,
                                                         placeholder="제목 입력(100자이내)" />
                                                     <input type="text" class="input_type1 board02" id="boardCnt" ,
                                                         placeholder="문의 내용 입력( 내용은 20자 이상 입력해주세요.)" />
-                                                    <p class="table_cmt">한글 1500자, 영문 3000자 까지 입력 가능합니다.</p>
+                                                    <p class="table_cmt">※ 한글 1500자, 영문 3000자 까지 입력 가능합니다.</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -209,14 +219,45 @@
                                                 <!-- upload box의 경우 input 타입은 file을 사용 -->
                                                 <!-- accept: 서버가 수용할 수 있는 파일 타입 -->
                                                 <div class="upload_box">
-                                                    <span class="upload_group">
-                                                        <!-- <input class="upload-name" value="파일선택"> -->
-                                                        <label for="ex_file">파일추가</label>
-                                                        <input type="file" id="ex_file" accept="image/*">
-                                                    </span>
-                                                    <span class="upload_group">
+                                                    <div class="upload_group">
+                                                        <div class="file_wrap">
+                                                            <figure>
+                                                                <img class="no_img" src="./assets/img_default.png"
+                                                                    alt="">
+                                                                <label for="ex_file" class="plus_file">
+                                                                    <img src="./assets/btn-imgadd.png" alt="">
+                                                                </label>
+                                                                <input type="file" id="ex_file" accept="image/*">
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upload_group">
+                                                        <div class="file_wrap">
+                                                            <figure>
+                                                                <img class="no_img" src="./assets/img_default.png"
+                                                                    alt="">
+                                                                <label for="ex_file" class="plus_file">
+                                                                    <img src="./assets/btn-imgadd.png" alt="">
+                                                                </label>
+                                                                <input type="file" id="ex_file" accept="image/*">
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upload_group">
+                                                        <div class="file_wrap">
+                                                            <figure>
+                                                                <img class="no_img" src="./assets/img_default.png"
+                                                                    alt="">
+                                                                <label for="ex_file" class="plus_file">
+                                                                    <img src="./assets/btn-imgadd.png" alt="">
+                                                                </label>
+                                                                <input type="file" id="ex_file" accept="image/*">
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <span class="upload_group">
                                                         <label for="ex_file">항목제거</label>
-                                                    </span>
+                                                    </span> -->
                                                 </div>
                                                 <p class="table_cmt">
                                                     이미지 가능 확장자: jpg, gif, bmp <br />
