@@ -7,7 +7,6 @@
 }
 
 /* 공통 */
-* {outline: 1px solid #--f00;}
 
 .input[disabled] { cursor: default;}
 .mb10 { margin-bottom: 10px; }
@@ -15,8 +14,8 @@
 .icon_tit {
     font-size: 17px;
     font-weight: 500;
+    text-align: left;
     color: #333;
-    margin-bottom: 13px
 }
 
 .Wrap {
@@ -31,21 +30,28 @@
     height: 490px;
     margin: 0 auto;
 }
-
 .table_bd {
     width: 100%;
     height: auto;
-    border-top: 2px solid #333;
-    border-bottom: 1px solid #333;
+    /* border-top: 2px solid #333;
+    border-bottom: 1px solid #333; */
     margin-bottom: 50px;
 }
 
+table {
+    margin-bottom: 80px;
+}
+
+colgroup {
+    width: 180px;
+}
+
 tbody, tr th {
-    padding: 30px 10px;
     font-size: 16px;
-    /* text-align: left; */
-    vertical-align: middle;
     color: #333;
+    padding: 30px 20px;
+    text-align: left;
+    vertical-align: middle;
     background: #f7f7f7;
     border-bottom: 1px solid #e6e6e6;
 }
@@ -54,91 +60,12 @@ tbody, td {
     font-size: 15px;
     color: #666;
     padding: 30px 40px;
+    text-align: left;
     vertical-align: middle;
     background: #fff;
     border-bottom: 1px solid #e6e6e6;
 }
-select {
-    border: none;
-}
-
-/* table 코멘트 */
-.table_cmt {
-    margin-top: 10px;
-    text-align: left;
-}
-
-.clear { display: flex; justify-content: space-between;}
-.clear::after {
-    content: ".";
-    display: block;
-    clear: both;
-    height: 0;
-    font-size: 0;
-    visibility: hidden;
-}
-/* colum 칸 너비별 css */
-.colum_2 { display: flex; gap: 10px;}
-.colum_3 { display: flex; gap: 10px; }
-
-.input_type1 {
-    width: 100%;
-    height: 46px;
-    font-family: nbr;
-    font-size: 16px;
-    color: #666;
-    padding: 0 15px;
-    border: 1px solid #e6e6e6;
-    vertical-align: middle;
-    background: #fff;
-}
-
-.select_type1 {
-    width: 100%;
-    height: 46px;
-    font-size: 16px;
-    color: #666;
-    padding: 0 15px;
-    border: 1px solid #e6e6e6;
-    background: #fff;
-}
-
-.phone_input {
-    width: 159px;
-    height: 46px;
-    font-size: 16px;
-    color: #666;
-    padding: 0 15px;
-    border: 1px solid #e6e6e6;
-    background: #fff;
-}
-
-.email {
-    position: relative;
-    border: 1px solid #e6e6e6;
-}
-
-.emailbox {
-    width: 230px;
-    height: 44px;
-    padding: 0 15px;
-    border: 0;
-}
-.email_type1 {
-    display: inline-block;
-    width: 230px;
-    height: 46px;
-    font-size: 16px;
-    color: #000;
-    padding: 0 40px 0 20px;
-}
-.colmail {
-    width: 316px;
-}
-
-.alert_msg {
-    display: none;
-}
+select { border: none; }
 
 
 /* 슬라이드 깜박임 없애기 */
@@ -398,7 +325,7 @@ body {
 }
 
 .sub_content .Page_tab {
-    padding: 15px 0;
+    padding: 20px 0;
     font-size: 16px;
     color: #f9f9f9;
     border: 1px solid #008850;
@@ -408,14 +335,12 @@ body {
 
 .Page_wrap {
     border: 1px solid #e6e6e6;
-    border-top: 0;
 }
 
 .Page_wrap .table_wrap {
     padding: 60px 100px 100px 100px;
     background: #fff;
 }
-
 /* Navi Bar */
 .sub_navibar {
     line-height: 60px;
@@ -505,113 +430,74 @@ body {
     width: 70%;
 }
 
-/* 테이블01, 문의유형 */
-.radio_group {
-    display: block;
+/* 테이블 큰제목, 필수항목 */
+.Page_wrap .ViewTit {
+    font-size: 25px;
+    font-weight: 500;
     text-align: left;
+    color:#333;
+    padding-bottom: 20px;
 }
-
-.radio_group .radio_tit {
-    display: inline-block;
-    width: 105px;
-}
-
-.radio_group .radio_box {
-    display: inline-block;
-    width: 200px;
-}
-
-
-/* 테이블01, 문의내용 */
-.board_group textarea {
-    resize: none;
-}
-.board_group .form-control{
-    height: 200px;
-    padding: 10px 15px;
-    font-size: 15px;
-}
-
-.board_group .board_btm {
+.Page_wrap .Essn {
     display: flex;
+    flex-direction: row-reverse;
+}
+.Page_wrap .Essn_tt {
+    font-size: 16px;
+    color: #008850;
+    line-height: 50px;
+    padding-left: 25px;
+    background: url(../assets/icon_check_1.png) 0 20px no-repeat;
 }
 
-/* 건물정보, 지역선택, 주소찾기 */
-.build_btm {
+
+/* 작성내용 - 파일첨부 */
+.view_file_wrap .file_area {
+    height: 70px;
+    border: 1px solid #ddd;
+}
+.file_area_btn {
+    height: 40px;
+    text-align: right;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    padding: 12px;
+}
+
+.file_area_btn a {
+    padding: 0 10px;
+    margin-right: 5px;
+    border: 1px solid #999;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+
+
+/* 댓글 */
+.Comment {
     display: flex;
-    gap: 10px;
+    padding: 20px 0 100px 0;
+    border-top: 3px solid #ddd;
 }
-.build_btm select { width: 48%; }
 
-.add2 { display: flex; }
-.input_type1.post_num { width: 343px; }
-.input_type1:disabled { background: #f7f7f7; }
-.input_type1 {
-    display: block;
+.Comment textarea {
     width: 100%;
-    height: 46px;
-    font-family: nbr;
-    font-size: 16px;
-    color: #666;
-    padding: 0 15px;
-    border: 1px solid #e6e6e6;
-    vertical-align: middle;
-    background: #fff;
+    height: 104px;
+    resize: none;
+    padding: 10px 10px;
+    border: 1px solid #ddd;
 }
 
-.btn_type {
-    display: block;
-    width: 190px;
-    height: 46px;
-    font-size: 15px;
-    color: #fff;
+.Comment .cmt_btn {
+    width: 150px;
     text-align: center;
-    border: none;
-    line-height: 46px;
-    text-decoration: none;
-    vertical-align: middle;
-    background: #999;
+    line-height: 100px;
+    border: 2px solid #008850;
+    margin-left: 10px;
 }
-
-/* 파일첨부 */
-.upload_box {
-    display: flex;
-    gap: 30px;
-    padding-bottom: 10px;
-}
-
-.upload_group { display: flex;}
-.upload_group .no_img { border: 1px solid #e7e7e7; }
-.upload_group #ex_file { display: none; }
-
-.file_wrap figure { position: relative; }
-.plus_file img {
-    position: absolute;
-    bottom: -5px;
-    right: -10px;
-}
-.file_wrap .file_name {
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-
-/* 약관동의 */
-.agreement .agree_Wrap {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-.agreement .agree_cnt {
-    padding: 30px 40px;
-    border: 4px solid #008850;
-    margin-bottom: 50px;
-}
-
-.agreement .agree_cnt p {
-    font-size: 14px;
-    text-align: left;
-    line-height: 25px;
-    
+.Comment .cmt_btn a {
+    color: #008850;
 }
 
 /* 완료버튼 */

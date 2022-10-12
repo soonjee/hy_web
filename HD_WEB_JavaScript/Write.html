@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>현대엘리베이트 실습 - javascript - 고객서비스:글쓰기</title>
+    <title>현대엘리베이트 실습 - javascript - 고객서비스:글쓰기 페이지</title>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/Write.css">
 </head>
 
 <body>
     <div class="Wrap">
+        <!-- 헤더 -->
         <header class="Header row">
             <div class="hd_wrap">
                 <h1>
@@ -56,10 +57,27 @@
                 </div>
             </div>
         </header>
+        <!-- 글쓰기 페이지 -->
         <section class="WritePage">
             <!-- 글쓰기 메인Visual -->
             <div class="sub_customer subwrap">
                 <h2 class="sub_tit">고객서비스</h2>
+            </div>
+            <!-- Navi Bar -->
+            <div class="sub_navibar">
+                <div class="navibar_wrap">
+                    <a href="/" class="home">home</a>
+                    <a href="" class="dir">고객지원</a>
+                    <a href="" class="dir">고객서비스</a>
+                    <div class="navi_page_selc">
+                        <select name="navi_page" id="navi_selc">
+                            <option value="Write">견적/도면 문의</option>
+                            <option value="View">문의내역</option>
+                            <option value="List">질문과 답변</option>
+                        </select>
+                    </div>
+                    <div class="share">SHARE</div>
+                </div>
             </div>
             <!-- 글쓰기 컨텐츠 -->
             <div class="sub_content">
@@ -73,7 +91,9 @@
                     <div class="Page_wrap">
                         <!-- 필수항목 테이블 -->
                         <div class="table_wrap">
-                            <div class="Essn tt">필수항목</div>
+                            <div class="Essn">
+                                <div class="Essn_tt">필수항목</div>
+                            </div>
                             <!-- 캡션태그로 할껄 그랬나? -->
                             <div class="table_bd">
                                 <table>
@@ -133,11 +153,11 @@
                                                 <div class="radio_group">
                                                     <span class="radio_tit">신규설치</span>
                                                     <span class="radio_box">
-                                                        <input type="radio" id="Estimate">
+                                                        <input type="radio" name="rdobtn" checked="checked"  id="Estimate">
                                                         <label for="Estimate">견적 문의</label>
                                                     </span>
                                                     <span class="radio_box">
-                                                        <input type="radio" id="floorplan">
+                                                        <input type="radio" name="rdobtn" id="floorplan">
                                                         <label for="floorplan">도면 문의</label>
                                                     </span>
                                                 </div>
@@ -202,11 +222,19 @@
                                             </th>
                                             <td>
                                                 <div class="board_group">
-                                                    <input type="text" class="input_type1 mb10" id="boardTit" ,
-                                                        placeholder="제목 입력(100자이내)" />
-                                                    <input type="text" class="input_type1 board02" id="boardCnt" ,
-                                                        placeholder="문의 내용 입력( 내용은 20자 이상 입력해주세요.)" />
-                                                    <p class="table_cmt">※ 한글 1500자, 영문 3000자 까지 입력 가능합니다.</p>
+                                                    <input type="text" class="input_type1 mb10" id="boardTit" placeholder="제목 입력(100자이내)" />
+                                                    <!-- 글자수 byte 제한 -->
+                                                    <div class="table border">
+                                                        <form id="frm_textArea" name="frm_textArea">
+                                                            <textarea type="text" class="input_type1 form-control" id="textArea_byteLimit" name="textArea_byteLimit"
+                                                                placeholder="문의 내용 입력( 내용은 20자 이상 입력해주세요.)" onkeyup="fn_checkByte(this)"></textarea>
+                                                        </form>
+                                                    <div class="board_btm">
+                                                        <p class="table_cmt">※ 한글 1500자, 영문 3000자 까지 입력 가능합니다.</p>
+                                                        <div>
+                                                            <sup>(<span id="nowByte">0</span>/3,000bytes)</sup>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>
@@ -216,13 +244,27 @@
                                                 <p class="icon_tit">파일첨부</p>
                                             </th>
                                             <td>
-                                                <!-- upload box의 경우 input 타입은 file을 사용 -->
                                                 <!-- accept: 서버가 수용할 수 있는 파일 타입 -->
+                                                <!-- 업로드 구역 -->
                                                 <div class="upload_box">
                                                     <div class="upload_group">
                                                         <div class="file_wrap">
                                                             <figure>
-                                                                <img class="no_img" src="./assets/img_default.png"
+                                                                <img class="no_img" id="previewImg" width="95" src="./assets/img_default.png"
+                                                                    alt="">
+                                                                <label for="ex_file" class="plus_file">
+                                                                    <img  src="./assets/btn-imgadd.png" alt="">
+                                                                </label>
+                                                                <input type="file" id="ex_file" class="ex_file" accept="image/*"/>
+                                                            </figure>
+                                                            <p id="file_name">파일안뜸</p>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="upload_group">
+                                                        <div class="file_wrap">
+                                                            <figure>
+                                                                <img class="no_img" id="previewImg" width="95" src="./assets/img_default.png"
                                                                     alt="">
                                                                 <label for="ex_file" class="plus_file">
                                                                     <img src="./assets/btn-imgadd.png" alt="">
@@ -234,7 +276,7 @@
                                                     <div class="upload_group">
                                                         <div class="file_wrap">
                                                             <figure>
-                                                                <img class="no_img" src="./assets/img_default.png"
+                                                                <img class="no_img" id="previewImg" width="95" src="./assets/img_default.png"
                                                                     alt="">
                                                                 <label for="ex_file" class="plus_file">
                                                                     <img src="./assets/btn-imgadd.png" alt="">
@@ -243,54 +285,37 @@
                                                             </figure>
                                                         </div>
                                                     </div>
-                                                    <div class="upload_group">
-                                                        <div class="file_wrap">
-                                                            <figure>
-                                                                <img class="no_img" src="./assets/img_default.png"
-                                                                    alt="">
-                                                                <label for="ex_file" class="plus_file">
-                                                                    <img src="./assets/btn-imgadd.png" alt="">
-                                                                </label>
-                                                                <input type="file" id="ex_file" accept="image/*">
-                                                            </figure>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <span class="upload_group">
-                                                        <label for="ex_file">항목제거</label>
-                                                    </span> -->
                                                 </div>
+                                                <!-- 업로드 cmt 구역 -->
                                                 <p class="table_cmt">
                                                     이미지 가능 확장자: jpg, gif, bmp <br />
                                                     파일 가능 확장자 : txt, hwp, xls, ppt, doc, zip, pdf <br />
                                                     첨부파일은 한 개 등록 가능하며 사이즈를 1M로 제한합니다.
                                                 </p>
+                                                <!-- 업로드 btn 구역 -->
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-
-                        </div>
-                        <!-- 약관동의 테이블 -->
+                            <!-- 약관동의 테이블 -->
                         <div class="agreement">
-                            <div class="table_wrap">
-                                <div class="TopTit tt">약관동의</div>
+                            <div class="agree_wrap">
+                                <div class="TopTit icon_tit">약관동의</div>
                                 <!-- 캡션태그로 할껄 그랬나? -->
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <div class="icon_tit">
-                                                <input type="checkbox" id="agree">
-                                                <label for="agree">개인정보 수집 및 이용에 관한 동의</label>
-                                            </div>
-                                        </tr>
-                                        <td>
-                                            <input type="text">
-                                            <!-- 인풋 안 약관내용 작성하기 -->
-                                            <p class="alert_msg">개인정보 수집 및 이용안내에 동의하셔야 신청이 가능합니다.</p>
-                                        </td>
-                                    </tbody>
-                                </table>
+                                <div class="agree_Wrap">
+                                    <input type="checkbox" id="agree">
+                                    <label for="agree">개인정보 수집 및 이용에 관한 동의</label>
+                                </div>
+                                <div class="agree_cnt">
+                                    <p>
+                                        회사는 제품에 대한 의견 및 궁금하신 사항에 대해 답변을 드리기 위해 귀하의 개인정보를 아래와 같이 수집하고자 합니다.</br>
+                                        제품에 대한 의견 및 제품 견적 문의 등 문의 사항 처리, 제품 관련 민원 및 고충 처리 결과 안내 </br>
+                                        수집 후 3년 (소비자의 불만 또는 분쟁처리에 관한 기록)
+                                    </p>
+                                </div>
+                                <!-- 인풋 안 약관내용 작성하기 -->
+                                <p class="alert_msg">개인정보 수집 및 이용안내에 동의하셔야 신청이 가능합니다.</p>
                             </div>
                         </div>
                         <!-- 완료버튼 -->
@@ -300,6 +325,8 @@
                                 <li class="btn_ac02"><a href="">취소</a></li>
                             </ul>
                         </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

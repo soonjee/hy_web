@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대엘리베이트 실습 - javascript - 고객서비스:문의 뷰페이지</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/View.css">
+</head>
+
+<body>
+    <div class="Wrap">
+        <!-- 헤더 -->
+        <header class="Header row">
+            <div class="hd_wrap">
+                <h1>
+                    <a href="./">
+                        현대엘리베이트
+                    </a>
+                </h1>
+                <nav class="Gnb w1200">
+                    <ul>
+                        <li><a href="#!">기업정보</a></li>
+                        <li><a href="#!">솔루션</a></li>
+                        <li><a href="#!">서비스</a></li>
+                        <li><a href="#!">혁신기술</a></li>
+                        <li><a href="#!">고객지원</a></li>
+                    </ul>
+                </nav>
+                <div class="top_service">
+                    <ul class="project">
+                        <li><a href="#!">주요프로젝트</a></li>
+                        <li><a href="#!">IR</a></li>
+                    </ul>
+                    <div class="lang">
+                        <strong><i class="xi-globus"></i> KOR <i class="xi-angle-down arrow"></i></strong>
+                        <ul class="lang_box">
+                            <li><a href="#!">KOR</a></li>
+                            <li><a href="#!">ENG</a></li>
+                            <li><a href="#!">CHN</a></li>
+                        </ul>
+                    </div>
+                    <div class="top_search">
+                        <strong><i class="xi-search"></i></strong>
+                        <div class="search_box">
+
+                            <form action="#!">
+                                <input type="text" placeholder="검색어를 입력하세요" required>
+                                <button>
+                                    <i class="xi-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 뷰 페이지 -->
+        <section class="WritePage">
+            <!-- 글쓰기 메인Visual -->
+            <div class="sub_customer subwrap">
+                <h2 class="sub_tit">고객서비스</h2>
+            </div>
+            <!-- Navi Bar -->
+            <div class="sub_navibar">
+                <div class="navibar_wrap">
+                    <a href="/" class="home">home</a>
+                    <a href="" class="dir">고객지원</a>
+                    <a href="" class="dir">고객서비스</a>
+                    <div class="navi_page_selc">
+                        <select name="navi_page" id="navi_selc">
+                            <option value="Write">견적/도면 문의</option>
+                            <option value="View">문의내역</option>
+                            <option value="List">질문과 답변</option>
+                        </select>
+                    </div>
+                    <div class="share">SHARE</div>
+                </div>
+            </div>
+            <!-- 글쓰기 컨텐츠 -->
+            <div class="sub_content">
+                <div class="w1200">
+                    <div class="Page_tit">
+                        <h3>나의 문의내역</h3>
+                    </div>
+                    <div class="Page_wrap">
+                        <div class="Page_tab"></div>
+                        <!-- 필수항목 테이블 -->
+                        <div class="table_wrap">
+                            <div class="table_bd">
+                                <!-- 작성자 정보 -->
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 20%;">
+                                    </colgroup>
+                                    <tbody>
+                                        <div class="ViewTit">작성자 정보</div>
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">작성자</p>
+                                            </th>
+                                            <td>
+                                                <div class="des_box">최*지</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- 작성 내용 -->
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 20%;">
+                                    </colgroup>
+                                    <tbody>
+                                        <div class="ViewTit">작성 내용</div>
+                                        <!-- 제목 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">제목</p>
+                                            </th>
+                                            <td>
+                                                <div class="des_box">
+                                                    문의드립니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- 분야 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">분야</p>
+                                            </th>
+                                            <td>
+                                                <div class="des_box">
+                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, eaque.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- 내용 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">내용</p>
+                                            </th>
+                                            <td>
+                                                <div class="des_box">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ex sint tempora saepe accusamus! Nulla provident numquam sint laboriosam ducimus.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- 파일첨부 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">파일첨부</p>
+                                            </th>
+                                            <td>
+                                                <div class="view_file_wrap">
+                                                    <div class="file_area"></div>
+                                                    <div class="file_area_btn">
+                                                        <a href="">열기</a>
+                                                        <a href="assets/logo.png" download>다운로드</a>
+                                                        <a href="/">전체 다운로드</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- 답변 내용 -->
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 20%">
+                                    </colgroup>
+                                    <tbody>
+                                        <div class="ViewTit">답변 내용</div>
+                                        <!-- 답변자 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">답변자</p>
+                                            </th>
+                                            <td>
+                                                <div class="des_box">박*미</div>
+                                            </td>
+                                        </tr>
+                                        <!-- 답변일자 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">답변일자</p>
+                                            </th>
+                                            <td>
+                                                <div class="des_box">2022-09-22</div>
+                                            </td>
+                                        </tr>
+                                        <!-- 답변내용 -->
+                                        <tr>
+                                            <th>
+                                                <p class="icon_tit">답변내용</p>
+                                            </th>
+                                            <td>
+                                                <div class="des_box">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. </br>Cupiditate culpa nam ullam expedita hic dolores qui neque consequatur quas amet ex ipsam, </br>distinctio doloremque nostrum. Quos provident iure ratione quasi distinctio? Quasi fuga molestias </br>vitae, nam perspiciatis eos atque doloribus aspernatur voluptatum </br>aliquam inventore minima omnis quaerat soluta aut, labore non </br>nostrum iusto laborum? Tempora amet hic odio quam, magnam delectus</br> veritatis labore quisquam. Aut ex </br>explicabo commodi amet eligendi.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 댓글 -->
+                            <div class="Comment">
+                                <textarea name="cmt" id="cmt_area" placeholder="300자 이내로 입력하세요." ></textarea>
+                                <div class="cmt_btn">
+                                    <a href="/">댓글등록</a>
+                                </div>
+                            </div>
+
+                            <!-- 완료버튼 -->
+                            <div class="btn">
+                                <ul>
+                                    <li class="btn_ac01"><a href="">문의완료</a></li>
+                                    <li class="btn_ac02"><a href="">취소</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="./js/View.js"></script>
+
+</body>
+
+</html>
